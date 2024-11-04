@@ -288,7 +288,6 @@ Short SHA: a5c3785
 ```
 
 3. **プロジェクトの構造表示**
-```markdown
 ```
 project-root/
 ├── src/
@@ -300,7 +299,6 @@ project-root/
 │   └── app.test.js
 ├── package.json
 └── README.md
-```
 ```
 
 4. **アコーディオンスタイルのFAQ**
@@ -880,7 +878,7 @@ Short SHA: a5c3785
 ```
 
 3. **プロジェクトの構造表示**
-```markdown
+````markdown
 ```
 project-root/
 ├── src/
@@ -893,7 +891,7 @@ project-root/
 ├── package.json
 └── README.md
 ```
-```
+````
 
 4. **アコーディオンスタイルのFAQ**
 ```markdown
@@ -1200,6 +1198,15 @@ MIT © [Your Name](https://github.com/username)
 
 1. **ヘッダー（見出し）**
 
+```markdown
+# H1見出し
+## H2見出し
+### H3見出し
+#### H4見出し
+##### H5見出し
+###### H6見出し
+```
+
 # H1見出し
 ## H2見出し
 ### H3見出し
@@ -1209,6 +1216,13 @@ MIT © [Your Name](https://github.com/username)
 
 <br/><br/> <br/><br/>
 2. **文字の装飾**
+```markdown
+*イタリック体* または _イタリック体_
+**太字** または __太字__
+***太字かつイタリック体*** または ___太字かつイタリック体___
+~~取り消し線~~
+```
+
 *イタリック体* または _イタリック体_
 **太字** または __太字__
 ***太字かつイタリック体*** または ___太字かつイタリック体___
@@ -1228,6 +1242,16 @@ MIT © [Your Name](https://github.com/username)
       1. さらにネスト
 ```
 
+* 箇条書き1
+* 箇条書き2
+  * ネストされた箇条書き
+    * さらにネスト
+
+1. 番号付きリスト1
+2. 番号付きリスト2
+   1. ネストされた番号付きリスト
+      1. さらにネスト
+
 <br/><br/> <br/><br/>
 4. **引用**
 ```markdown
@@ -1236,6 +1260,10 @@ MIT © [Your Name](https://github.com/username)
 >> ネストされた引用もできます
 ```
 
+> これは引用文です
+> 複数行の引用も可能です
+>> ネストされた引用もできます
+
 <br/><br/> <br/><br/>
 5. **水平線**
 ```markdown
@@ -1243,6 +1271,10 @@ MIT © [Your Name](https://github.com/username)
 ***
 ___
 ```
+
+---
+***
+___
 
 <br/><br/> <br/><br/>
 これらが最も基本的なMarkdown記法です。これらを使いこなせるようになったら、次のフェーズに進みましょうか？
@@ -1267,6 +1299,16 @@ ___
 <https://www.example.com>
 ```
 
+[リンクテキスト](https://www.example.com)
+[リンクテキスト](https://www.example.com "マウスホバー時のツールチップ")
+
+<!-- 参照リンク方式 -->
+[リンクテキスト][参照ID]
+[参照ID]: https://www.example.com
+
+<!-- URLの直接表示 -->
+<https://www.example.com>
+
 <br/><br/> <br/><br/>
 2. **画像の挿入**
 ```markdown
@@ -1277,6 +1319,14 @@ ___
 ![代替テキスト][画像ID]
 [画像ID]: 画像URL
 ```
+
+![代替テキスト](画像URL)
+![代替テキスト](画像URL "画像タイトル")
+
+<!-- 参照方式 -->
+![代替テキスト][画像ID]
+[画像ID]: 画像URL
+
 
 <br/><br/> <br/><br/>
 3. **コードブロック**
@@ -1294,6 +1344,18 @@ console.log("Hello, World!");
 これは `インラインコード` です
 ````
 
+```python
+def hello_world():
+    print("Hello, World!")
+```
+
+```javascript
+console.log("Hello, World!");
+```
+
+<!-- インラインコード -->
+これは `インラインコード` です
+
 <br/><br/> <br/><br/>
 4. **表（テーブル）**
 ```markdown
@@ -1308,6 +1370,16 @@ console.log("Hello, World!");
 | A1 | B1 | C1 |
 ```
 
+| 列1 | 列2 | 列3 |
+|-----|-----|-----|
+| A1 | B1 | C1 |
+| A2 | B2 | C2 |
+
+<!-- 整列指定 -->
+| 左寄せ | 中央寄せ | 右寄せ |
+|:---|:---:|---:|
+| A1 | B1 | C1 |
+
 <br/><br/> <br/><br/>
 5. **タスクリスト**
 ```markdown
@@ -1316,6 +1388,11 @@ console.log("Hello, World!");
   - [x] サブタスク1
   - [ ] サブタスク2
 ```
+
+- [x] 完了したタスク
+- [ ] 未完了のタスク
+  - [x] サブタスク1
+  - [ ] サブタスク2
 
 <br/><br/> <br/><br/>
 6. **折りたたみセクション**
@@ -1328,6 +1405,14 @@ Markdownも使用できます。
 
 </details>
 ```
+
+<details>
+<summary>クリックして展開</summary>
+
+ここに詳細な内容を書きます。
+Markdownも使用できます。
+
+</details>
 
 <br/><br/> <br/><br/>
 フェーズ3では、さらに高度な装飾や特殊な使用法について説明できます。例えば：
@@ -1359,6 +1444,18 @@ $$
 $$
 ```
 
+<!-- インライン数式 -->
+次の数式 $E = mc^2$ は有名です
+
+<!-- ブロック数式 -->
+$$
+\begin{aligned}
+\frac{\partial f}{\partial x} &= 2x \\
+\int_0^1 x^2 dx &= \frac{1}{3}
+\end{aligned}
+$$
+
+
 <br/><br/> <br/><br/>
 2. **絵文字**
 ```markdown
@@ -1370,6 +1467,13 @@ $$
 👍 ❤️ 🚀
 ```
 
+<!-- 絵文字コード -->
+:smile: :heart: :thumbsup:
+:rocket: :octocat: :warning:
+
+<!-- Unicode絵文字 -->
+👍 ❤️ 🚀
+
 <br/><br/> <br/><br/>
 3. **キーボードキー表示**
 ```markdown
@@ -1378,6 +1482,11 @@ $$
 
 <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
 ```
+
+<!-- HTML要素を使用 -->
+<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</kbd>
+
+<kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
 
 <br/><br/> <br/><br/>
 4. **注釈（Footnotes）**
@@ -1389,11 +1498,19 @@ $$
 [^note]: 注釈IDは任意の文字列が使えます。
 ```
 
+ここに注釈が必要な文章があります[^1]。
+別の注釈も追加できます[^note]。
+
+[^1]: 注釈の内容をここに書きます。
+[^note]: 注釈IDは任意の文字列が使えます。
+
 <br/><br/> <br/><br/>
 5. **ハイライト（一部のMarkdownエンジンでサポート）**
 ```markdown
 ==ハイライトされたテキスト==
 ```
+
+==ハイライトされたテキスト==
 
 <br/><br/> <br/><br/>
 6. **メンション＆参照（GitHub特有）**
@@ -1409,6 +1526,17 @@ organization/repository#123
 SHA: a5c3785ed8d6a35868bc169f07e40e889087fd2e
 Short SHA: a5c3785
 ```
+
+<!-- ユーザーメンション -->
+@username
+
+<!-- Issue/PR参照 -->
+#123
+organization/repository#123
+
+<!-- コミット参照 -->
+SHA: a5c3785ed8d6a35868bc169f07e40e889087fd2e
+Short SHA: a5c3785
 
 <br/><br/> <br/><br/>
 7. **カスタムHTML（GitHubでサポートされる範囲）**
@@ -1430,6 +1558,22 @@ Short SHA: a5c3785
 </details>
 ```
 
+<div align="center">
+  <h2>中央寄せの見出し</h2>
+  <img src="image.png" width="300">
+</div>
+
+<sup>上付き文字</sup>
+<sub>下付き文字</sub>
+
+<details>
+<summary>折りたたみセクション</summary>
+
+- 項目1
+- 項目2
+
+</details>
+
 <br/><br/> <br/><br/>
 8. **コメントアウト**
 ```markdown
@@ -1443,6 +1587,16 @@ Short SHA: a5c3785
 可能です
 -->
 ```
+
+[//]: # (この行はコメントとして扱われます)
+[//]: # "この形式も可能です"
+[//]: # 'シングルクォートも使えます'
+
+<!--
+複数行の
+コメントも
+可能です
+-->
 
 <br/><br/> <br/><br/>
 これらの要素を組み合わせることで、より豊かな表現が可能になります。例えば：
@@ -1471,6 +1625,13 @@ Short SHA: a5c3785
 ![Custom Badge](https://img.shields.io/badge/custom-badge-brightgreen)
 ```
 
+[![Build Status](https://img.shields.io/travis/username/repo)](https://travis-ci.org/username/repo)
+[![npm version](https://img.shields.io/npm/v/package.svg)](https://www.npmjs.com/package/package)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+<!-- カスタムバッジ -->
+![Custom Badge](https://img.shields.io/badge/custom-badge-brightgreen)
+
 <br/><br/> <br/><br/>
 2. **高度なテーブル表現**
 ```markdown
@@ -1492,10 +1653,27 @@ Short SHA: a5c3785
 </table>
 ```
 
+<!-- 複雑なテーブル -->
+<table>
+  <tr>
+    <th rowspan="2">項目</th>
+    <th colspan="2">詳細</th>
+  </tr>
+  <tr>
+    <th>サブ項目1</th>
+    <th>サブ項目2</th>
+  </tr>
+  <tr>
+    <td>データ1</td>
+    <td>値1</td>
+    <td>値2</td>
+  </tr>
+</table>
+
+
 <br/><br/> <br/><br/>
 3. **プロジェクトの構造表示**
 ```markdown
-```
 project-root/
 ├── src/
 │   ├── index.js
@@ -1507,6 +1685,18 @@ project-root/
 ├── package.json
 └── README.md
 ```
+
+```
+project-root/
+├── src/
+│   ├── index.js
+│   └── components/
+│       ├── App.js
+│       └── Header.js
+├── tests/
+│   └── app.test.js
+├── package.json
+└── README.md
 ```
 
 <br/><br/> <br/><br/>
@@ -1530,6 +1720,23 @@ project-root/
 </details>
 ```
 
+<details>
+<summary>Q: よくある質問1？</summary>
+
+回答の詳細な内容をここに記述します。
+- 箇条書き
+- 画像
+- コードなども含められます
+
+</details>
+
+<details>
+<summary>Q: よくある質問2？</summary>
+
+別の回答をここに記述します。
+
+</details>
+
 <br/><br/> <br/><br/>
 5. **インタラクティブな目次（TOC）**
 ```markdown
@@ -1546,9 +1753,21 @@ project-root/
 ### サブセクション1.2
 ```
 
+## 目次
+- [セクション1](#セクション1)
+  - [サブセクション1.1](#サブセクション11)
+  - [サブセクション1.2](#サブセクション12)
+- [セクション2](#セクション2)
+  - [サブセクション2.1](#サブセクション21)
+
+<!-- 自動生成されるアンカーリンクに合わせてIDを設定 -->
+## セクション1
+### サブセクション1.1
+### サブセクション1.2
+
+
 <br/><br/> <br/><br/>
 6. **プロジェクトテンプレート構造**
-````markdown
 # プロジェクト名
 
 ## 概要
@@ -1579,7 +1798,6 @@ MIT
 
 ## 貢献
 PRを歓迎します！
-````
 
 <br/><br/> <br/><br/>
 7. **カスタムスタイリング（サポートされる範囲で）**
@@ -1599,6 +1817,22 @@ PRを歓迎します！
   
 </div>
 ```
+
+<!-- 中央揃えのコンテナ -->
+<div align="center">
+  
+  <!-- ロゴ画像 -->
+  <img src="logo.png" alt="Logo" width="200"/>
+  
+  <!-- バッジグループ -->
+  [![Badge1](url1)](link1)
+  [![Badge2](url2)](link2)
+  
+  <!-- 簡潔な説明 -->
+  **プロジェクトの簡潔な説明をここに**
+  
+</div>
+
 
 <br/><br/> <br/><br/>
 8. **ベストプラクティス**
@@ -1621,7 +1855,6 @@ PRを歓迎します！
 # フェーズ5: 実践的なテンプレートとユースケース
 
 1. **OSSプロジェクトの完全なREADMEテンプレート**
-```markdown
 # プロジェクト名 🚀
 
 <div align="center">
@@ -1733,10 +1966,8 @@ npm test
 ## 📄 ライセンス
 
 MIT © [Your Name](https://github.com/username)
-```
 
 2. **GitHubプロフィール用READMEテンプレート**
-```markdown
 <div align="center">
   <img src="header.png" alt="header"/>
 </div>
@@ -1766,10 +1997,8 @@ MIT © [Your Name](https://github.com/username)
 - [LinkedIn](https://linkedin.com/in/username)
 - [Blog](https://blog.example.com)
 
-```
 
 3. **プロジェクトの貢献ガイドライン（CONTRIBUTING.md）**
-```markdown
 # 貢献ガイドライン
 
 ## 行動規範
@@ -1795,7 +2024,5 @@ MIT © [Your Name](https://github.com/username)
 - ESLintの設定に従う
 - コミットメッセージは[Conventional Commits](https://www.conventionalcommits.org/)に従う
 - PRの説明には変更内容を詳しく記載する
-
-```
 
 これらのテンプレートは、目的に応じてカスタマイズして使用できます。次のフェーズでは、より特殊なケースや高度なMarkdownテクニックについて説明できますが、いかがでしょうか？
